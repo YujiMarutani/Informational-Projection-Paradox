@@ -1,9 +1,0 @@
-# Contribution & Measurement Guidelines
-
-This directory defines the operational rules for maintaining theoretical integrity within the IPP repository.
-
-## Files
-- **version_control.md** — Rules for modifying core models and architectural layers.
-- **measurement_mismatch.md** — Schema for documenting the orthogonal complement (X⊥) when proposing new metrics.
-
-These guidelines ensure that all contributions remain aligned with L0/L1 material constraints and avoid administrative distortion.
