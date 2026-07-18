@@ -1,0 +1,10 @@
+# IPP Whitepaper Series
+
+This directory hosts formal papers, preprints, and extended theoretical documents related to the Informational Projection Paradox (IPP).
+
+## Planned Documents
+- **ipp_whitepaper_v1.0.md** — Formal specification of the paradox.
+- **ipp_collapse_dynamics.md** — Extended mathematical treatment of entropy growth in X⊥.
+- **ipp_civos_integration.md** — Integration of IPP with the Civilization OS framework.
+
+All documents begin as stubs and will be expanded into full academic-style papers.
