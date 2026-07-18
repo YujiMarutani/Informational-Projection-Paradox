@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Informational Projection Paradox"
+abstract: "A mathematical and architectural framework modeling how metric optimization collapses real-world systems through lossy informational projection."
+authors:
+  - family-names: "Marutani"
+    given-names: "Yuji"
+    orcid: "https://orcid.org/0009-0000-9692-9399"
+version: "1.0.0"
+license: "CC-BY-4.0"
+repository-code: "https://github.com/YujiMarutani/Informational-Projection-Paradox"
+keywords:
+  - informational projection paradox
+  - metrics
+  - kpi optimization
+  - collapse dynamics
+  - orthogonal complement
+  - kernel invisibility
+  - civilization os
