@@ -6,27 +6,27 @@
 
 ## 1. Brand Philosophy
 
-OAOL’s identity is built on the principle that **civilizations behave like orchestras**:  
-multi‑layered, harmonic, adaptive, and sensitive to feedback.
+OAOL’s identity is built on the principle that civilizations behave like orchestras:  
+multi‑layered, harmonic, adaptive, and sensitive to feedback
 
 The brand expresses:
-- **Orchestration** — coordinated intelligence  
-- **Civilization Dynamics** — layered systemic resonance  
-- **Scientific Precision** — clarity, structure, and academic rigor  
-- **Creative Harmonics** — the aesthetic lineage of O’Valley Autonomous Philharmonia
+- Orchestration — coordinated intelligence  
+- Civilization Dynamics — layered systemic resonance  
+- Scientific Precision — clarity, structure, and academic rigor  
+- Creative Harmonics — the aesthetic lineage of O’Valley Autonomous Philharmonia
 
 ---
 
 ## 2. Core Identity Elements
 
 ### 2.1 Official Names
-- **Primary:** O’Valley AI Orchestration Lab  
-- **Abbreviation:** OAOL  
-- **Parent Entity:** O’Valley Autonomous Philharmonia (OAP)  
-- **Foundation Year:** 2026  
+- Primary: O’Valley AI Orchestration Lab  
+- Abbreviation: OAOL  
+- Parent Entity: O’Valley Autonomous Philharmonia (OAP)  
+- Foundation Year: 2026  
 
 ### 2.2 Tagline
-**“Orchestrating Adaptive Civilization Dynamics.”**
+“Orchestrating Adaptive Civilization Dynamics.”
 
 ### 2.3 Conceptual Motif
 Civilization OS × Orchestral Harmonics × AI Feedback Systems
@@ -85,17 +85,17 @@ Minimal concentric-wave emblem for:
 ## 5. Typography
 
 ### 5.1 Wordmark Font
-**SerifOrchestraDisplay**  
+SerifOrchestraDisplay  
 - Elegant, classical  
 - Reflects OAP heritage  
 
 ### 5.2 UI / Technical Font
-**SansOrchestrationTech**  
+SansOrchestrationTech  
 - Clean, modern  
 - Ideal for Streamlit apps and dashboards  
 
 ### 5.3 Monospace Layer
-**MonoSystemGrid**  
+MonoSystemGrid  
 - For code, formulas, and artifact labels  
 
 ---
@@ -108,11 +108,11 @@ Minimal concentric-wave emblem for:
 - Symmetry is mandatory  
 
 ### 6.2 Safe Zone
-- Minimum margin: **15% of logo diameter**
+- Minimum margin: 15% of logo diameter
 
 ### 6.3 Minimum Size
-- Digital: **128 px**  
-- Print: **25 mm**
+- Digital: 128 px  
+- Print: 25 mm
 
 ### 6.4 Backgrounds
 - Preferred: dark mode  
@@ -175,14 +175,13 @@ Use:
 
 ## 10. Brand Voice
 
-- **Tone:** Symphonic × Scientific  
-- **Style:** Precise, elegant, structurally aware  
-- **Narrative:** Civilization as an orchestrated adaptive system  
+- Tone: Symphonic × Scientific  
+- Style: Precise, elegant, structurally aware  
+- Narrative: Civilization as an orchestrated adaptive system  
 
 ---
 
 ## 11. Closing Statement
 
-OAOL’s identity is a commitment to harmonizing intelligence, culture, and governance.  
-Our brand is not decoration — it is a **visual operating system** for civilization research.
-
+OAOL’s identity is a commitment to harmonizing intelligence, culture, and governance  
+Our brand is not decoration — it is a visual operating system for civilization research
