@@ -1,121 +1,179 @@
-# Informational Projection Paradox (IPP)
+# 📘 Informational Projection Paradox (IPP) — v2.0.0 Canonical Release
+**Collapse Dynamics of Metric‑Aligned Systems**  
+**DOI: 10.5281/zenodo.21435350**
+
+---
 
 ## 1. Abstract
-The **Informational Projection Paradox (IPP)** formalizes a structural failure mode inherent to all advanced administrative, sociotechnical, and regulatory operating systems. It defines the precise mechanism by which a system optimizes itself toward numerical perfection (a 100% KPI score) while simultaneously accelerating toward catastrophic real-world failure. By compressing the infinite dimensionalities of physical reality into low-dimensional symbolic metrics, higher-level decision-making detaches from raw material friction, transforming optimized data into an apparatus of structural terror that violently strips away reality's complexity.
+
+The **Informational Projection Paradox (IPP)** explains why modern systems collapse when they optimize for metrics that only partially represent reality.  
+IPP formalizes the structural gap between:
+
+- **X-space** — the real operational layer (cohesion, memory, qualitative buffers)  
+- **Y-space** — the measurement layer (dashboards, KPIs, compliance signals)
+
+When organizations overfit to Y-space, the projection from X → Y becomes **non-injective**, producing kernel invisibility, loss of qualitative information, and irreversible entropy growth in the orthogonal complement \(X_{\perp}\).
+
+This repository provides the **canonical v2.0.0 release**, integrating:
+
+- **Theory** — the IPP whitepaper (DOI: 10.5281/zenodo.21435350)  
+- **Mathematical Models** — Pre‑Ideology Layer Model v1.0 and Silent Invasion Model v1.0  
+- **Executable Dynamics** — Python simulations implementing bounded, irreversible collapse equations  
+- **Diagrammatic Evidence** — visualizations of collapse trajectories under baseline, KPI-enforced, and rescue scenarios  
+
+IPP demonstrates that collapse is not a metaphor but a **computable dynamical process**:  
+cohesion erodes, civilizational memory decays irreversibly, isolation saturates, and dashboards paradoxically improve as the underlying system fails.
+
+This canonical build unifies conceptual architecture, mathematical kernels, and reproducible simulations into a single scientific artifact, establishing IPP as an executable framework for analyzing metric-driven collapse in complex systems.
 
 ---
 
-## 2. Mathematical Model
-
-### A. State Space and Measurement Mapping
-Let $X$ represent the absolute state space of material reality (e.g., raw source code, molecular physics, ground-level operational friction). $X$ is an infinite-dimensional, non-linear, and continuous topological space.
-
-Let $Y$ represent the measurement space (e.g., cyber range scores, parts-per-million regulatory thresholds, quarterly performance indices). $Y$ is a finite-dimensional, discretized vector space ($\mathbb{R}^n$).
-
-The process of metric measurement is an asymmetric projection mapping, $M$, that compresses reality into symbols:
-
-$$M: X \to Y$$
-
-Because $M$ is non-surjective and lossy, it inherently possesses a non-trivial **Orthogonal Complement** ($X_{\perp}$), representing the unmeasurable, messy realities that cannot be quantified by the design parameters of $M$.
-
-$$X = X_{\parallel} \oplus X_{\perp} \quad \text{where} \quad M(X_{\perp}) = 0$$
-
-### B. Observability Asymmetry and the Kernel
-Active, metric-aligned output (e.g., an autonomous exploit execution within a cyber range, or a specific nucleotide count matched by targeted primers) generates positive, quantifiable vectors within $Y$:
-
-$$M(A(x)) = y_{\text{target}} \in Y \quad (y_{\text{target}} > 0)$$
-
-Conversely, genuine defensive robustness or structural resilience ($D(x)$) is characterized by invariance—the preservation of a steady state ($dx/dt = 0$) despite dynamic perturbation. Because "nothing happening" yields no delta, the measurement mapping crushes true resilience into its mathematical **Kernel**:
-
-$$M(D(x)) = 0 \in Y$$
-
-Consequently, reconstructing true material stability from the measurement matrix is an ill-posed inverse problem; the real-world defense or safety capability is structurally unreadable from the score alone:
-
-$$M^{-1}(y_{\text{target}}) \not\implies D(x)$$
-
-### C. Collapse Dynamics
-When a higher-level governance architecture (the ideological layer) forces the optimization of a metric axis ($M_i$), the operating system drives the material plane to solve:
-
-$$\max_{x \in X} M_i(x)$$
-
-This optimization forces extreme over-fitting to the observable subspace ($X_{\parallel}$). To eliminate friction and maximize the score, the system systematically strips away the redundancy, buffers, and qualitative indicators residing within the unmeasured orthogonal complement ($X_{\perp}$). As the score approaches perfection, the environmental entropy of the blind spot spikes exponentially:
-
-$$\lim_{M_i(x) \to \max} \text{Entropy}(X_{\perp}) = \infty$$
-
-$$\therefore M(A(x)) \to \max \implies \text{Collapse}(X_{\perp})$$
-
-At the exact moment the metric reaches 100%, the real-world architecture collapses entirely under the weight of unmonitored vulnerabilities orthogonal to the test design.
-
----
-
-## 3. System Architecture (Civilization OS Framework)
-
-| Layer | Component | Operational Specification | Failure Mode (Ideological Terror) |
-| :--- | :--- | :--- | :--- |
-| **L0** | **Bootloader** | Material constraints, immutable physical and hardware baselines. | Ignored or assumed to be infinitely malleable by top-level software mandates. |
-| **L1** | **Hardware** | The raw operational plane (molecular shapes, running source code, physical infrastructure). | Suppressed and forced to act out a fictional performance to satisfy L2 metrics. |
-| **L2** | **Device Driver** | The measurement informatics layer; instruments converting L1 reality into data points. | Confused with reality itself. Selecting the assay/tool that guarantees the target value. |
-| **L3** | **Kernel** | The logical interpreter; translating raw data into systemic context and policy options. | Degenerates into a validation engine for pre-existing bureaucratic/corporate conclusions. |
-| **L4** | **Scheduler** | The decision-making vector; resource allocation, enforcement rules, and policy execution. | Replaces real-world observation with metric maximization ("Hitting the PowerPoint Target"). |
-| **L5** | **User Space** | Social cognition, public communication interface, and narrative consensus. | Totalitarian inversion; treating dissenting observation as unscientific noise or malicious drift. |
-
----
-
-## 4. Case Studies
-
-### Case A: The Cyber Range Illusion
-* **The Metric:** A simulated automated environment (Cyber Range) calculates a defensive team's readiness score based on the speed and detection of known, script-driven autonomous exploits.
-* **The Illusion (100% Score):** The defense scripts are perfectly tuned and over-fitted to the range's internal parameters, achieving a flawless score.
-* **The Collapse ($X_{\perp}$):** In the live deployment environment, the system is instantly compromised by an attacker exploiting an unmonitored, decades-old legacy bug in a low-level communication packet—a variable that was stripped out of the "optimized" training simulation to minimize environment complexity.
-
-### Case B: The Corporate Slide-Deck Extinction
-* **The Metric:** A legacy engineering firm hires a management consulting firm to optimize operational efficiency, establishing rigid KPIs based on resource utilization and billable hours.
-* **The Illusion (100% Score):** The dashboard turns completely green. Redundant engineering steps are eliminated, and every worker is tracking at peak metric optimization.
-* **The Collapse ($X_{\perp}$):** The qualitative, unmeasurable buffers of the firm—such as senior engineers mentoring juniors or informal code reviews—are destroyed because they do not map to the KPI. The core tribal knowledge of the hardware layer completely evaporates, causing the next physical product deployment to fail catastrophically in the field.
-
----
-
-## 5. Repository Structure
+## 2. Repository Structure
 
 Informational-Projection-Paradox/
-├── README.md                           # Core system specification and overview
+│
 ├── model/
-│   ├── projection_mapping.md           # Mathematical definition of X to Y compression
-│   ├── kernel_and_inverse_problem.md   # Mathematical proof of defensive invisibility
-│   └── collapse_dynamics.md            # Kinetic formulas modeling entropy growth
-├── civos/
-│   ├── architecture_layers.md          # Detailed operational breakdown of L0 to L5
-│   └── scheduler_ideology.md           # Analysis of administrative gaslighting mechanisms
+│   ├── pre_ideology_layer_model_v1.0.json
+│   ├── silent_invasion_model_v1.0.json
+│   └── silent_invasion_sim.py
+│
 ├── diagrams/
-│   ├── state_space_x.png               # Visual layout of the continuous reality map
-│   ├── measurement_space_y.png         # Vector diagram of discrete symbol spaces
-│   └── orthogonal_complement.png       # Geometry of the systemic blind spot
+│   ├── pre_ideology_layer.png
+│   ├── silent_invasion_model.png
+│   └── silent_invasion_simulation_v2.3.png
+│
 ├── papers/
-│   └── ipp_whitepaper_v1.0.md          # Formally compiled research preprint
-├── examples/
-│   ├── cyber_range_case.md             # Security simulation failure breakdown
-│   └── regulatory_failure_case.md       # Quantitative analysis of material metric failures
-└── guidelines/
-├── version_control.md              # Protocols for maintaining repository integrity
-└── measurement_mismatch.md         # Schema for documenting the orthogonal complement
+│   ├── ipp_whitepaper_v1.0.tex
+│   └── ipp_whitepaper_v1.0.md
+│
+├── CITATION.cff
+└── README.md
+
+
+Each directory corresponds to a distinct layer of the IPP architecture:
+
+- **model/** → mathematical kernels  
+- **diagrams/** → conceptual & dynamical visualization  
+- **papers/** → theoretical foundation  
+- **CITATION.cff** → canonical metadata (Zenodo DOI)
 
 ---
 
-## 6. Contribution Guidelines
+## 3. Core Models Included in v2.0.0
 
-### A. Core Immutability
-All pull requests modifying the fundamental mathematical models (`model/`) or system architectures (`civos/`) must remain strictly anchored to L0/L1 material physics and hardware-level constraints. Any attempt to dilute raw system telemetry with administrative language, corporate governance frameworks, or subjective performance metrics will be automatically rejected by the automated repository linters.
+### 3.1 Pre‑Ideology Layer Model v1.0  
+Models internal collapse dynamics of:
 
-### B. Documenting the Orthogonal Complement ($X_{\perp}$)
-When submitting new metrics, tools, or diagnostic test cases to the `examples/` directory, contributors are **strictly required** to fill out a Measurement Mismatch schema (`guidelines/measurement_mismatch.md`). This document must explicitly state:
-1. What the proposed metric *cannot* see.
-2. The exact dimensionalities of reality being compressed or discarded during the projection mapping ($M$).
-3. The structural strategy for preventing the system from over-fitting to this new metric.
+- Isolation (I)  
+- Cohesion (C)  
+- Civilizational Memory (M)  
+- Narrative pressure (E)  
+- Urban pressure (S)
 
-### C. Anti-PowerPoint Policy
-We reject the structural gaslighting of modern corporate administration. Contributions that prioritize decorative aesthetics over systemic, machine-readable logic (such as unmapped infographics or non-functional JSON schemas) will be closed without review. Reality must not be forced to perform for the presentation.
+This is the **internal‑only collapse engine**.
 
 ---
 
-## 7. License
-This framework is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. You are free to share, copy, and modify this material for any purpose, provided that you give appropriate credit to the original architectural specifications.
+### 3.2 Silent Invasion Model v1.0  
+Extends the above by adding:
+
+- External influence (X)  
+- Cultural infiltration  
+- Memory erosion  
+- Cohesion decay  
+- Isolation acceleration  
+
+This is the **internal + external collapse engine**.
+
+---
+
+### 3.3 IPP Bounded Dynamics v2.3 (canonical)
+
+The definitive dynamical system used in:
+model/silent_invasion_sim.py
+
+Features:
+
+- Saturated dynamics (bounded 0–1)  
+- Irreversible memory decay  
+- KPI‑enforcement collapse  
+- IPP‑rescue protocol  
+- Measurement firewall  
+- Long‑term irreversible decay (t=400)
+
+This is the **official simulation engine** for IPP v2.0.0.
+
+---
+
+## 4. Simulation Evidence (Executable Collapse)
+
+The canonical simulation:
+diagrams/silent_invasion_simulation_v2.3.png
+
+demonstrates:
+
+- Collapse under baseline conditions  
+- Accelerated collapse under KPI enforcement  
+- Temporary rescue under IPP protocol  
+- Delayed irreversible collapse due to memory loss  
+
+This is the **first executable proof** of IPP’s collapse dynamics.
+
+---
+
+## 5. Citation (v2.0.0 Canonical)
+
+Marutani, Y. (2026). Informational Projection Paradox (IPP):
+Collapse Dynamics of Metric-Aligned Systems
+(Version v2.0 — Diagram-Integrated Release) (Version v2.0.0).
+Zenodo. https://doi.org/10.5281/zenodo.21435350
+
+
+---
+
+## 6. Keywords
+
+- informational projection paradox  
+- metric-driven collapse  
+- orthogonal complement  
+- kernel invisibility  
+- civ‑os  
+- differential equation simulation  
+- collapse dynamics  
+- qualitative buffer erosion  
+
+---
+
+## 7. Purpose of v2.0.0 Canonical Build
+
+This release unifies:
+
+- **Theory**（論文）  
+- **Mathematical models**（JSON）  
+- **Executable simulations**（Python）  
+- **Visual evidence**（PNG）  
+- **Permanent DOI**（Zenodo）
+
+into a single **canonical, reproducible scientific artifact**.
+
+IPP is no longer an abstract theory—  
+it is a **fully executable collapse engine**.
+
+---
+
+## 8. Next Directions
+
+- Civilization‑OS v3.0 architecture  
+- IPP Rescue Protocol v2.0  
+- Cohesion Recovery Dynamics  
+- Silent Invasion Model v1.1
+
+---
+
+## 9. Maintainer
+
+**Yuji Marutani**  
+Yokohama, Kanagawa, Japan  
+ORCID: https://orcid.org/0009-0000-9692-9399
+
+
