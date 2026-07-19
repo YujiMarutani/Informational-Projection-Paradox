@@ -1,0 +1,517 @@
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{cmap}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, positioning}
+
+% ---------- Theme colors ----------
+\definecolor{ippink}{HTML}{1A2E44}   % deep ink blue (X: material reality)
+\definecolor{ippgold}{HTML}{C8963E}  % projection accent (M mapping)
+\definecolor{ippgray}{HTML}{6B7280}  % muted supporting text
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ippink,
+    urlcolor=ippgold,
+    citecolor=ippgold,
+    pdftitle={Informational Projection Paradox},
+    pdfauthor={Yuji Marutani}
+}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% =====================================================
+% Cover Page
+% =====================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+
+    % Top rule
+    \draw[ippgold, line width=1pt] ($(current page.north west)+(1in,-1.6in)$) -- ($(current page.north east)+(-1in,-1.6in)$);
+
+    % Eyebrow label
+    \node[anchor=north west, ippgray, font=\sffamily\small] at ($(current page.north west)+(1in,-1.1in)$)
+        {WHITEPAPER \quad $\cdot$ \quad STRUCTURAL DRAFT};
+
+    % Main title
+    \node[anchor=north west, text width=6.5in, align=left] at ($(current page.north west)+(1in,-2.6in)$)
+        {\color{ippink}\sffamily\bfseries\fontsize{34}{40}\selectfont
+        Informational\\ Projection Paradox};
+
+    % Subtitle
+    \node[anchor=north west, text width=6.5in, align=left, ippgray, font=\sffamily\large] at ($(current page.north west)+(1in,-4.55in)$)
+        {A formal account of how metric optimization collapses complex systems through lossy informational projection};
+
+    % Conceptual diagram: X -> Y projection with kernel invisibility
+    \node[anchor=north west] at ($(current page.north west)+(1in,-5.6in)$) {
+        \begin{tikzpicture}[scale=1.0]
+            % Reality space X
+            \draw[ippink, line width=1pt, fill=ippink!5] (0,0) ellipse (1.6 and 1.1);
+            \node[ippink, font=\sffamily\bfseries\small] at (0,1.35) {$X$ --- material reality};
+
+            % X_parallel (visible slice) inside X
+            \draw[ippgold, line width=1pt, fill=ippgold!15] (-0.55,0) ellipse (0.55 and 0.85);
+            \node[ippgold!70!black, font=\sffamily\scriptsize] at (-0.55,0) {$X_{\parallel}$};
+
+            % X_perp label (rest of ellipse)
+            \node[ippgray, font=\sffamily\scriptsize] at (0.75,0) {$X_{\perp}$};
+
+            % Arrow: projection mapping M
+            \draw[-{Latex[length=3mm]}, ippink, line width=1.1pt] (2.0,0) -- (3.6,0);
+            \node[above, font=\sffamily\small] at (2.8,0.15) {$M$};
+
+            % Measurement space Y
+            \draw[ippgold, line width=1pt, fill=ippgold!8] (5.2,0) ellipse (1.1 and 0.85);
+            \node[ippgold!60!black, font=\sffamily\bfseries\small] at (5.2,1.15) {$Y$ --- measurement};
+        \end{tikzpicture}
+    };
+
+    % Bottom metadata block
+    \node[anchor=south west, font=\sffamily\small, ippgray] at ($(current page.south west)+(1in,1.4in)$)
+        {\begin{tabular}{@{}ll@{}}
+            \textbf{\color{ippink}Author} & Yuji Marutani \\[2pt]
+            \textbf{\color{ippink}Version} & 1.0.0 \\[2pt]
+            \textbf{\color{ippink}License} & CC-BY-4.0
+        \end{tabular}};
+
+    % Bottom rule
+    \draw[ippgold, line width=1pt] ($(current page.south west)+(1in,1.2in)$) -- ($(current page.south east)+(-1in,1.2in)$);
+
+\end{tikzpicture}
+\end{titlepage}
+
+% =====================================================
+% Abstract Page
+% =====================================================
+\thispagestyle{empty}
+\vspace*{0.6in}
+
+{\color{ippgray}\sffamily\small ABSTRACT}\\[6pt]
+{\color{ippgold}\rule{\linewidth}{1pt}}\\[22pt]
+
+\noindent
+\begin{minipage}{\linewidth}
+\large
+The Informational Projection Paradox (IPP) formalizes how metric-driven optimization collapses complex real-world systems through lossy informational projection.
+A projection mapping $M : X \rightarrow Y$ compresses high-dimensional material reality $X$ into a finite measurement space $Y$.
+As organizations optimize for the metric axes of $Y$, they increasingly overfit to the visible subspace $X_{\parallel}$ while neglecting the orthogonal complement $X_{\perp}$---the region of reality invisible to measurement.
+This imbalance produces kernel invisibility, observability asymmetry, and ultimately entropy explosion in $X_{\perp}$, leading to systemic collapse.
+We present the mathematical foundations of IPP, its architectural implications within the Civilization OS framework, and case studies demonstrating collapse dynamics in cyber ranges and corporate KPI environments.
+\end{minipage}
+
+\vspace{36pt}
+{\color{ippgray}\sffamily\small KEY CONCEPTS}\\[12pt]
+
+\noindent
+% ---- keyword tags (plain boxes, no tikz, for maximum viewer compatibility) ----
+\newcommand{\ipptag}[1]{%
+  \fcolorbox{ippgold}{ippgold!8}{\textcolor{ippink}{\sffamily\small\strut\, #1\,}}%
+}
+
+\ipptag{Informational Projection}\hspace{6pt}%
+\ipptag{Kernel Invisibility}\hspace{6pt}%
+\ipptag{Observability Asymmetry}
+
+\vspace{8pt}
+
+\ipptag{Entropy Explosion}\hspace{6pt}%
+\ipptag{Civilization OS}\hspace{6pt}%
+\ipptag{Metric Overfitting}
+
+\vfill
+\noindent{\color{ippgold}\rule{\linewidth}{0.6pt}}\\[4pt]
+{\color{ippgray}\sffamily\footnotesize Informational Projection Paradox --- Whitepaper v1.0}
+\newpage
+
+% =====================================================
+% Table of Contents Page
+% =====================================================
+\thispagestyle{empty}
+\vspace*{0.6in}
+
+{\color{ippgray}\sffamily\small TABLE OF CONTENTS}\\[6pt]
+{\color{ippgold}\rule{\linewidth}{1pt}}\\[10pt]
+
+\renewcommand{\contentsname}{}
+\vspace{-24pt}
+\tableofcontents
+\newpage
+
+% =====================================================
+\section{Introduction}
+% =====================================================
+
+Modern institutions rely on metrics and KPIs to evaluate performance, allocate resources, and justify decisions.
+While metrics provide structure, they also impose a projection---a reduction of complex reality into simplified numerical form.
+This reduction is inherently lossy: what cannot be measured is excluded, and what is excluded becomes vulnerable.
+
+IPP addresses the structural failure that emerges when organizations optimize for these projections rather than the underlying reality.
+The paradox arises because improving measured performance often degrades real performance, especially when the measurement space $Y$ fails to capture critical dimensions of $X$.
+
+This whitepaper contributes:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item A formal mathematical model of informational projection and collapse dynamics
+    \item A definition of kernel invisibility and observability asymmetry
+    \item An architectural mapping of IPP onto the Civilization OS (CivOS) framework
+    \item Case studies demonstrating real-world collapse induced by metric overfitting
+\end{itemize}
+
+IPP provides a unified lens for understanding failures in cybersecurity, governance, scientific measurement, and corporate administration.
+
+% =====================================================
+\section{Mathematical Foundations}
+% =====================================================
+
+\subsection{State Space Definition}
+
+Let $X$ denote the high-dimensional material reality space.
+It contains all latent variables, qualitative phenomena, and contextual dependencies that constitute the real system.
+
+Let $Y$ denote the measurement space, composed of discrete metric axes
+$M_1, M_2, \ldots, M_n$.
+A projection mapping:
+
+\[
+M : X \rightarrow Y
+\]
+
+compresses reality into measurable form.
+This mapping is \textbf{non-injective} and \textbf{non-surjective}, guaranteeing loss.
+
+We define:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item $X_{\parallel}$: the subspace of reality aligned with measurement axes
+    \item $X_{\perp}$: the orthogonal complement --- everything invisible to measurement
+\end{itemize}
+
+Optimization over $Y$ increases alignment with $X_{\parallel}$ while eroding $X_{\perp}$.
+
+\subsection{Observability Asymmetry}
+
+We define \textbf{attack observability}:
+
+\[
+A(x) = \text{visibility of harmful states in } Y
+\]
+
+and \textbf{defensive invisibility}:
+
+\[
+D(x) = \text{portion of defensive structure hidden in } X_{\perp}
+\]
+
+When $D(x) \gg A(x)$, attackers see more than defenders.
+This asymmetry emerges naturally from lossy projection.
+
+The kernel of $M$:
+
+\[
+\ker(M) = \{ x \in X \mid M(x) = 0 \}
+\]
+
+represents states that produce no measurable signal.
+These states accumulate entropy as optimization pushes the system toward metric-aligned configurations.
+
+\subsection{Collapse Dynamics}
+
+Metric optimization selects:
+
+\[
+\arg\max_{x \in X} M_i(x)
+\]
+
+for each axis $M_i$.
+This induces overfitting to $X_{\parallel}$, shrinking the system's qualitative buffer.
+
+Collapse occurs when:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item $X_{\perp}$ accumulates unresolved entropy
+    \item Kernel states become structurally dominant
+    \item Measurement ceases to correlate with reality
+    \item A small perturbation in $X_{\perp}$ propagates catastrophically into $X_{\parallel}$
+\end{enumerate}
+
+This dynamic explains failures in cyber ranges, KPI-driven corporations, and governance systems.
+
+% =====================================================
+\section{Civilization OS Architecture}
+% =====================================================
+
+\subsection{Layer Overview}
+
+The Civilization OS (CivOS) provides a structural model for understanding how informational projection affects societal, organizational, and cognitive systems.
+IPP describes \textbf{what collapses}; CivOS describes \textbf{where collapse propagates}.
+Together they form a unified architecture for analyzing metric-induced systemic failure.
+
+CivOS models human institutions as a six-layer operating system:
+
+\paragraph{L0 --- Bootloader (Foundational Assumptions)}
+This layer initializes a society's epistemic and ontological assumptions.
+It defines what counts as \emph{real}, \emph{measurable}, and \emph{actionable}.
+When the projection mapping $M$ becomes dominant, L0 shifts from material reality to metric reality, causing foundational drift.
+
+\paragraph{L1 --- Hardware (Physical Infrastructure)}
+This layer includes factories, networks, logistics, and physical assets.
+Over-optimization of $Y$ reduces redundancy and qualitative buffers in L1, making infrastructure brittle.
+Entropy accumulated in $X_{\perp}$ manifests as unexpected physical failures.
+
+\paragraph{L2 --- Device Driver (Institutional Interfaces)}
+L2 translates physical reality into administrative signals.
+When measurement regimes narrow, L2 becomes a \emph{lossy encoder}, amplifying kernel invisibility.
+Organizations begin to ``see'' only what their dashboards can display.
+
+\paragraph{L3 --- Kernel (Governance Logic)}
+The kernel enforces rules, allocates resources, and maintains system invariants.
+Metric-aligned optimization rewrites kernel logic to prioritize symbolic performance over real performance.
+This produces \emph{ideological inversion}: harmful states appear beneficial when viewed through $Y$.
+
+\paragraph{L4 --- Scheduler (Administrative Coordination)}
+The scheduler distributes attention, labor, and time.
+As $X_{\parallel}$ becomes the sole target of optimization, the scheduler collapses into a single-axis prioritization regime.
+Blind-spot accumulation in $X_{\perp}$ becomes unmanageable.
+
+\paragraph{L5 --- User Space (Human Behavior \& Culture)}
+Users interact with the system through incentives shaped by $Y$.
+When metrics dominate, user behavior becomes gamified, symbolic, and detached from material outcomes.
+Cultural norms shift toward \emph{metric compliance} rather than \emph{reality alignment}.
+
+\subsection{Failure Modes}
+
+IPP induces characteristic failure modes across CivOS layers:
+
+\paragraph{Metric-Induced Ideological Inversion}
+When $M(x)$ becomes the primary optimization target, harmful states in $X$ produce positive signals in $Y$.
+This inversion causes leaders to reward collapse-inducing behavior.
+
+\paragraph{Administrative Gaslighting Mechanisms}
+As kernel logic (L3) aligns with metrics, institutions deny or reinterpret real failures occurring in $X_{\perp}$.
+Dashboards show improvement while reality deteriorates.
+
+\paragraph{Replacement of Observation with Symbolic Performance}
+User-space behavior (L5) shifts from solving real problems to performing metric-aligned rituals.
+This accelerates entropy growth in $X_{\perp}$, pushing the system toward collapse.
+
+\paragraph{CivOS $\times$ IPP: Unified Interpretation}
+IPP explains \emph{why} systems collapse.
+CivOS explains \emph{how} collapse propagates through layers:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item L0 drift $\rightarrow$ distorted assumptions
+    \item L1 brittleness $\rightarrow$ infrastructure failure
+    \item L2 lossy encoding $\rightarrow$ blind-spot amplification
+    \item L3 inversion $\rightarrow$ governance misalignment
+    \item L4 prioritization collapse $\rightarrow$ coordination failure
+    \item L5 symbolic behavior $\rightarrow$ cultural detachment
+\end{itemize}
+
+Together, they form a complete architecture of metric-driven systemic failure.
+
+% =====================================================
+\section{Case Studies}
+% =====================================================
+
+\subsection{Cyber Range Illusion}
+
+Cyber ranges are designed to simulate adversarial environments for training and evaluation.
+However, these environments inevitably constitute a \textbf{projection} of real-world complexity into a simplified measurement space $Y$.
+Participants optimize for the visible axes---scenario scores, detection rates, response times---while ignoring the vast orthogonal complement $X_{\perp}$ that real attackers exploit.
+
+In many organizations, cyber range performance becomes a KPI.
+Teams learn to overfit to the simulation parameters:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item predictable attack paths
+    \item deterministic scoring logic
+    \item limited adversary models
+    \item absence of socio-technical complexity
+\end{itemize}
+
+This produces the \textbf{perfect score illusion}:
+high performance in $Y$ coexists with catastrophic vulnerability in $X$.
+
+When deployed in real environments, systems collapse because the defensive posture was optimized for the \textbf{projection}, not the \textbf{reality}.
+IPP explains this failure as entropy accumulation in $X_{\perp}$, amplified by metric-aligned training.
+
+\subsection{Corporate KPI Extinction}
+
+Corporations frequently optimize for KPIs such as efficiency, throughput, or cost reduction.
+These metrics form the measurement space $Y$, and optimization pushes the organization toward $X_{\parallel}$---the visible, quantifiable aspects of operations.
+
+Qualitative buffers---redundancy, craftsmanship, tacit knowledge, informal coordination---reside in $X_{\perp}$.
+As KPIs intensify, these buffers are systematically erased because they do not contribute to measured performance.
+
+This produces a characteristic extinction dynamic:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Redundancy removal} $\rightarrow$ systems become brittle
+    \item \textbf{Tribal knowledge erosion} $\rightarrow$ institutional memory collapses
+    \item \textbf{Hardware integrity decline} $\rightarrow$ maintenance is deferred because it is invisible to KPIs
+    \item \textbf{Symbolic compliance} $\rightarrow$ employees perform metric-aligned rituals rather than real work
+\end{enumerate}
+
+Eventually, a small perturbation in $X_{\perp}$ triggers catastrophic failure in $X_{\parallel}$.
+IPP formalizes this collapse as entropy explosion in the orthogonal complement.
+
+% =====================================================
+\section{Discussion}
+% =====================================================
+
+IPP reveals a fundamental flaw in metric-driven governance:
+measurement is not neutral --- it shapes the system it observes.
+
+When organizations optimize for metrics, they implicitly optimize for the projection mapping $M$, not for the underlying reality $X$.
+This produces structural distortions across CivOS layers:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item L0: epistemic drift
+    \item L1: infrastructure brittleness
+    \item L2: lossy encoding
+    \item L3: ideological inversion
+    \item L4: prioritization collapse
+    \item L5: symbolic behavior
+\end{itemize}
+
+\subsection{Cybersecurity Implications}
+
+Attackers exploit $X_{\perp}$, while defenders optimize for $Y$.
+This creates \textbf{observability asymmetry}: adversaries see more of the system's real state than defenders do.
+Security dashboards reinforce this asymmetry by showing only what is measurable, not what is real.
+
+\subsection{Governance Implications}
+
+Policies target measurable indicators, ignoring qualitative societal dynamics.
+This leads to \textbf{symbolic governance}, where institutions perform metric-aligned rituals instead of addressing underlying problems.
+Administrative gaslighting emerges when dashboards show improvement while lived reality deteriorates.
+
+\subsection{Scientific Measurement Implications}
+
+Research fields collapse when metrics (impact factor, citation counts) replace epistemic rigor.
+Optimization for visibility in $Y$ erodes the qualitative foundations in $X_{\perp}$, producing shallow, metric-aligned research output.
+
+\subsection{Corporate Administration Implications}
+
+KPI optimization destroys qualitative buffers, producing extinction dynamics.
+Redundancy, craftsmanship, tacit knowledge, and informal coordination --- all residing in $X_{\perp}$ --- are systematically erased.
+Organizations become brittle and collapse under small perturbations.
+
+\subsection{Unified Interpretation}
+
+IPP provides a unified lens for understanding failures across domains by grounding them in the geometry of informational projection.
+CivOS explains how collapse propagates through layers:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item L0 drift $\rightarrow$ distorted assumptions
+    \item L1 brittleness $\rightarrow$ infrastructure failure
+    \item L2 lossy encoding $\rightarrow$ blind-spot amplification
+    \item L3 inversion $\rightarrow$ governance misalignment
+    \item L4 prioritization collapse $\rightarrow$ coordination failure
+    \item L5 symbolic behavior $\rightarrow$ cultural detachment
+\end{itemize}
+
+Together, IPP and CivOS form a complete architecture of metric-driven systemic failure.
+
+% =====================================================
+\section{Future Work}
+% =====================================================
+
+Several research directions extend the IPP framework and open pathways for deeper mathematical, architectural, and empirical development.
+
+\subsection{Formal Proofs of Entropy Growth}
+
+A key theoretical challenge is establishing conditions under which entropy in
+$X_{\perp}$ becomes unbounded under metric-aligned optimization.
+This requires linking projection geometry with dynamical systems theory and exploring collapse thresholds.
+
+\subsection{Simulation Environments}
+
+Constructing CivOS-aligned simulators would allow controlled experimentation with projection dynamics.
+Such simulators can model:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item metric overfitting
+    \item kernel invisibility
+    \item entropy accumulation
+    \item collapse propagation across CivOS layers
+\end{itemize}
+
+These environments would provide empirical validation of IPP.
+
+\subsection{Integration with CivOS v2.0}
+
+Future versions of CivOS may include:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item epistemic schedulers
+    \item measurement firewalls
+    \item kernel-level reality checks
+    \item blind-spot detectors
+\end{itemize}
+
+These components aim to prevent lossy projection from dominating governance logic.
+
+\subsection{Standardization and Interoperability}
+
+Measurement regimes require protocols that ensure:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item multi-axis observability
+    \item preservation of qualitative buffers
+    \item protection against metric gaming
+    \item resilience against symbolic performance
+\end{itemize}
+
+This standardization would reduce collapse risk across industries.
+
+\subsection{Measurement Mismatch Registries}
+
+A registry of known mismatches between $X$ and $Y$ across domains would help identify collapse-prone systems.
+This includes cybersecurity, governance, scientific measurement, and corporate administration.
+
+% =====================================================
+\section{References}
+% =====================================================
+
+\textit{(Placeholder --- add citations, related frameworks, and external literature.)}
+
+% =====================================================
+\appendix
+\section{Appendix}
+% =====================================================
+
+\subsection{Mathematical Notation}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item $X$: material reality
+    \item $Y$: measurement space
+    \item $M : X \rightarrow Y$: projection mapping
+    \item $X_{\parallel}$: metric-aligned subspace
+    \item $X_{\perp}$: orthogonal complement
+    \item $\ker(M)$: kernel of the projection
+\end{itemize}
+
+\subsection{Extended Diagrams}
+
+\textit{(Insert diagrams from \texttt{diagrams/} directory.)}
+
+\subsection{Measurement Mismatch Schema}
+
+A framework for identifying mismatches between real-world phenomena and measurement axes.
+This schema supports early detection of collapse-prone systems by mapping projection distortions.
+
+\end{document}
