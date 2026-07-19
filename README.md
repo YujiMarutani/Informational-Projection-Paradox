@@ -141,7 +141,7 @@ Zenodo. https://doi.org/10.5281/zenodo.21435350
 
 This release unifies:
 
-- **Theory**（論文）  
+- **Theory**（Paper）  
 - **Mathematical models**（JSON）  
 - **Executable simulations**（Python）  
 - **Visual evidence**（PNG）  
